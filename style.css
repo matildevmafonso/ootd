@@ -1,6 +1,127 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  width: 100;
-  height: 97vh;
-  border-radius: 50%;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
   background: radial-gradient(circle, #72b1f0, #967ac5);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  font-weight: 900;
+  font-size: 100px;
+  font-style: italic;
+}
+
+h2 {
+  text-align: center;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 50px;
+  font-style: italic;
+  padding-top: 20px;
+}
+
+.main_image {
+  width: 300px;
+  height: auto;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.main_image:hover {
+  transition: transform 0.2s;
+  transform: scale(1.1);
+}
+
+.outfits-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: calc(100vh - 60px);
+}
+
+.outfits-container section {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.slide[data-active] {
+  opacity: 1;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+.slide > img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.carousel-button {
+  position: absolute;
+  z-index: 10;
+  background: none;
+  border: none;
+  font-size: 2.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: azure;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.carousel-button.prev {
+  left: 1rem;
+}
+
+.carousel-button.next {
+  right: 1rem;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }
